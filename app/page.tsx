@@ -95,7 +95,7 @@ export default function Home() {
 
       {/* Features */}
       <MaxWidthWrapper>
-        <div className="mx-auto mt-20 flex max-w-5xl flex-col gap-12 sm:mt-40 sm:gap-32 ">
+        <div className="mx-auto mt-20 flex max-w-5xl flex-col gap-20 sm:mt-40 sm:gap-40 ">
           {/* Intro */}
           <div>
             <div className="mb-6 px-6 lg:px-8">
