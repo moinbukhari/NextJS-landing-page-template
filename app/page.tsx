@@ -1,113 +1,328 @@
-import Image from 'next/image'
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { buttonVariants } from "@/components/ui/button";
+import { Card, CardDescription, CardTitle } from "@/components/ui/card";
+
+import Link from "next/link";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
+    <>
+      <Navbar />
+
+      {/* Hero */}
+      <MaxWidthWrapper className="mt-10 flex flex-col items-center justify-center text-center sm:mt-12">
+        <div className="mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/50">
+          <p className="text-sm font-semibold text-gray-700">
+            Try Convo for Free
+          </p>
+        </div>
+
+        <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl">
+          <span className="text-blue-600">Speech</span> Focused Language
+          Learning
+        </h1>
+
+        <p className="mt-5 max-w-prose text-lg text-zinc-700 sm:text-2xl">
+          Convo helps you improve your spoken fluency with the help of an AI
+          tutor.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <Link
+          className={cn(
+            buttonVariants({
+              size: "lg",
+              className: "mt-5",
+            }),
+            "text-lg",
+          )}
+          href={"/dashboard"}
+        >
+          Start Speaking Now
+        </Link>
+      </MaxWidthWrapper>
+
+      {/* Value Prop */}
+      <div>
+        <div className="relative isolate">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+            <div
+              style={{
+                clipPath:
+                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              }}
+              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#0a95ff] to-[#95f2fa] opacity-30 sm:left-[calc(50%-20rem)] sm:w-[72.1875rem] sm:translate-y-8"
             />
-          </a>
+          </div>
+
+          <div>
+            <div className="mx-auto flex max-w-6xl justify-center px-6 lg:px-8">
+              <div className="mt-8 flow-root sm:mt-16">
+                <div className="-m-2 w-fit rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10  lg:-m-4 lg:rounded-2xl lg:p-4">
+                  <Image
+                    src="/dashboard-preview.png"
+                    alt="product preview"
+                    width={955}
+                    height={808}
+                    quality={100}
+                    className="rounded-md bg-special p-2 shadow-2xl ring-1 ring-gray-900/10 md:p-8"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          >
+            <div
+              style={{
+                clipPath:
+                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              }}
+              className="relative right-[calc(50%-13rem)] aspect-[1155/678] w-[36.125rem] translate-x-1/3 rotate-[30deg] bg-gradient-to-tr from-[#0a95ff] to-[#95f2fa] opacity-30 sm:left-[calc(50%-36rem)] sm:w-[72.1875rem] sm:translate-y-8"
+            />
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      {/* Features */}
+      <MaxWidthWrapper>
+        <div className="mx-auto mt-20 flex max-w-5xl flex-col gap-12 sm:mt-40 sm:gap-32 ">
+          {/* Intro */}
+          <div>
+            <div className="mb-6 px-6 lg:px-8">
+              <div className="mx-auto max-w-2xl sm:text-center">
+                <h2 className="mt-2 text-4xl font-bold text-gray-900 sm:text-5xl">
+                  Start your first session in seconds
+                </h2>
+                <p className="mt-4 text-lg text-gray-600">
+                  Improving your spoken fluency has never been easier than with
+                  Convo.
+                </p>
+              </div>
+            </div>
+            {/* steps */}
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+            <ol className="my-2 space-y-4 pt-2 md:flex md:space-x-6 md:space-y-0 md:px-8">
+              <li className="md:flex-1">
+                <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
+                  <span className="text-sm font-medium text-blue-600">
+                    Step 1
+                  </span>
+                  <span className="text-xl font-semibold">
+                    Sign up for a Free Account
+                  </span>
+                  {/* <span className="mt-2 text-zinc-700">
+                Either starting out with a free plan or choose our{" "}
+                <Link
+                  href="/pricing"
+                  className="text-blue-700 underline underline-offset-2"
+                >
+                  pro plan
+                </Link>
+                .
+              </span> */}
+                </div>
+              </li>
+              <li className="md:flex-1">
+                <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
+                  <span className="text-sm font-medium text-blue-600">
+                    Step 2
+                  </span>
+                  <span className="text-xl font-semibold">
+                    Choose a <span className="text-blue-600">Language</span> &{" "}
+                    <span className="text-blue-600">Scenario</span>
+                  </span>
+                </div>
+              </li>
+              <li className="md:flex-1">
+                <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
+                  <span className="text-sm font-medium text-blue-600">
+                    Step 3
+                  </span>
+                  <span className="text-xl font-semibold">
+                    Start Your Speaking Session
+                  </span>
+                  {/* <span className="mt-2 text-zinc-700">
+                
+              </span> */}
+                </div>
+              </li>
+            </ol>
+          </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          {/* Scenarios */}
+          <div>
+            <div className="mb-6 px-6 lg:px-8">
+              <div className="mx-auto max-w-2xl sm:text-center">
+                <h2 className="mt-2 text-4xl font-bold text-gray-900 sm:text-5xl">
+                  Practice in Real Life Scenarios
+                </h2>
+                <p className="mt-4 text-lg text-gray-600">
+                  Get help if you make a mistake and guidance on saying
+                  something in your target language.
+                </p>
+              </div>
+            </div>
+            {/* steps */}
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+            <div className="flex items-center justify-center">
+              <div className="flex flex-col gap-6 md:flex-row">
+                <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
+                  <CardTitle>At the Cafe</CardTitle>
+                  <CardDescription className="mb-3 text-center">
+                    Learn how to order drinks and snacks
+                  </CardDescription>
+                  <Image
+                    src="/coffee.webp"
+                    alt="cafe scenario"
+                    width={128}
+                    height={128}
+                    quality={100}
+                  />
+                </Card>
+                <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
+                  <CardTitle>Getting A Taxi</CardTitle>
+                  <CardDescription className="mb-3 text-center">
+                    Learn how to navigate and get directions
+                  </CardDescription>
+                  <Image
+                    src="/taxi.webp"
+                    alt="cafe scenario"
+                    width={128}
+                    height={128}
+                    quality={100}
+                  />
+                </Card>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+                <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
+                  <CardTitle>Social Activities</CardTitle>
+                  <CardDescription className="mb-3 text-center">
+                    Learn how to make plans and catch up with friends
+                  </CardDescription>
+                  <Image
+                    src="/schedule.webp"
+                    alt="cafe scenario"
+                    width={128}
+                    height={128}
+                    quality={100}
+                  />
+                </Card>
+              </div>
+            </div>
+            <div className="mb-6 px-6 lg:px-8">
+              <div className="mx-auto max-w-2xl text-center">
+                <p className="mt-4 text-lg text-gray-600">and many more...</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Powered By */}
+          <div>
+            <div className="mb-6 px-6 lg:px-8">
+              <div className="mx-auto max-w-2xl sm:text-center">
+                <h2 className="mt-2 text-4xl font-bold text-gray-900 sm:text-5xl">
+                  Powered by
+                </h2>
+                <p className="mt-4 text-lg text-gray-600">
+                  These are the technologies behind the scene that make Convo
+                  possible
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center">
+              <div className="flex flex-col gap-6 md:flex-row">
+                <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
+                  <CardTitle>Whisper AI</CardTitle>
+                  <CardDescription className="mb-3 text-center">
+                    Speech to text
+                  </CardDescription>
+                  <Image
+                    src="/mic.webp"
+                    alt="cafe scenario"
+                    width={128}
+                    height={128}
+                    quality={100}
+                    className="rounded-xl"
+                  />
+                </Card>
+                <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
+                  <CardTitle>GPT 4</CardTitle>
+                  <CardDescription className="mb-3 text-center">
+                    Comprehensive prompts and responses
+                  </CardDescription>
+                  <Image
+                    src="/openai.webp"
+                    alt="cafe scenario"
+                    width={128}
+                    height={128}
+                    quality={100}
+                    className="rounded-xl"
+                  />
+                </Card>
+
+                <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
+                  <CardTitle>WebSpeech</CardTitle>
+                  <CardDescription className="mb-3 text-center">
+                    Text to speech
+                  </CardDescription>
+                  <Image
+                    src="/speaker.webp"
+                    alt="cafe scenario"
+                    width={128}
+                    height={128}
+                    quality={100}
+                    className="rounded-xl"
+                  />
+                </Card>
+              </div>
+            </div>
+          </div>
+
+          {/* Feedback */}
+          <div>
+            <div className="mb-6 px-6 lg:px-8">
+              <div className="mx-auto max-w-2xl sm:text-center">
+                <h2 className="mt-2 text-4xl font-bold text-gray-900 sm:text-5xl">
+                  Feedback
+                </h2>
+                <p className="mt-4 text-lg text-gray-600">
+                  What are people saying about Convo
+                </p>
+              </div>
+            </div>
+            {/* steps */}
+
+            <div>
+              <div className="mx-auto flex max-w-6xl justify-center px-6 lg:px-8">
+                <div className="flow-root">
+                  <div className="-m-2 w-fit rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10  lg:-m-4 lg:rounded-2xl lg:p-4">
+                    <Image
+                      width={2556}
+                      height={1436}
+                      quality={100}
+                      src="/tweet_collage.png"
+                      alt="Header image"
+                      className="rounded-md bg-white p-2 shadow-2xl ring-1 ring-gray-900/10 md:p-8"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </MaxWidthWrapper>
+
+      <Footer />
+    </>
+  );
 }
