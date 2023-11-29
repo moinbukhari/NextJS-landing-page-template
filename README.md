@@ -9,7 +9,7 @@ This is a Landing Page template for [Next.js](https://nextjs.org/) 14 App Router
 - Vercel's [Geist Font](https://vercel.com/font)
 
 ## Preview
-![Preview](https://github.com/moinbukhari/AI-Potrait-Gen/blob/main/src/assets/PortraitGen.png)
+![Preview](https://github.com/moinbukhari/NextJS-landing-page-template/blob/main/landing_page_preview.jpg)
 
 ## Getting Started
 
